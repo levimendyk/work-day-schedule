@@ -76,8 +76,14 @@ body {
     background-color: #46c7e4;
   }
 
+  @media screen and (max-width: 992px) {
+    textarea {
+        width: 450px;
+    }
+}
+
   @media screen and (max-width: 800px) {
-    .textarea {
-        width: 350px;
+    textarea {
+        width: 400px;
     }
 }
