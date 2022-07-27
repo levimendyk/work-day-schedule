@@ -1,9 +1,10 @@
 var currentDayDisplay = document.getElementById("currentDay");
 var timeBlocks = document.querySelectorAll(".time-block");
-var storageInput = document.querySelector("textarea"); // selectorAll??
-var button = document.querySelectorAll(".saveBtn"); // selectorAll??
+var storageInput = document.querySelector("textarea");
+var button = document.querySelectorAll(".saveBtn");
 var container = document.querySelector(".container");
 
+// when refreshed get item from local storage per text area
 document.querySelector("#text-9").textContent = localStorage.getItem("0900");
 document.querySelector("#text-10").textContent = localStorage.getItem("1000");
 document.querySelector("#text-11").textContent = localStorage.getItem("1100");
@@ -18,6 +19,9 @@ document.querySelector("#text-5").textContent = localStorage.getItem("1700");
 currentDayDisplay.textContent = moment().format("dddd MMMM Do YYYY");
 var currentTime = moment().format("HH[00]");
 
+// add gray to already past events
+// add color red to present event time
+// add green to future times
 for (let index = 0; index < button.length; index++) {
   const element = button[index];
   var buttonElId = element.id;
@@ -30,28 +34,12 @@ for (let index = 0; index < button.length; index++) {
     textAreaEl.classList.add("present");
   }
 }
-// add text content (blank text fill section) when clicked
+// add text content (blank text fill section)
 function inputText() {
   document.getElementsByClassName("textarea").value = "";
 }
 
-// for (let index = 0; index < timeBlocks.length; index++) {
-//   const element = timeBlocks[index];
-//   var timeBlockHour = element.querySelector(".hour");
-//   console.log(timeBlockHour.textContent);
-//   var currentTime = moment(timeBlockHour.textContent, "hhA");
-// }
-
-// add gray to already past events
-// add color red to present event time
-// add green to future times
-
-// function setColor(element, color) {
-//   element.style.backgroundColor = color;
-// }
-
 // store text content to local storage (add event listener to save button)
-// when refreshed the saved events persist
 storageInput.addEventListener("input", (letter) => {
   storageInput.textContent = letter.target.value;
 });

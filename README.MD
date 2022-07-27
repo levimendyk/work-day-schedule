@@ -28,7 +28,7 @@ GIVEN I am using a daily planner to create a schedule
 <li>THEN the saved events persist</li>
 </ul>
 
-[Deployed Site](placeholder)
+[Deployed Site](https://levimendyk.github.io/work-day-schedule/)
 
 Contribution guidelines for this project
 <img src="./assets/images/work-schedule-capture.PNG" alt="work day scheduler screenshot" />
